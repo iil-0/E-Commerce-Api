@@ -1,0 +1,15 @@
+namespace ECommerce.Api.DTOs.Categories;
+
+public class CategoryResponseDto
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+
+    public DateTime CreatedAt { get; set; }
+
+    // Bu kategoriye ait ürün sayısını göstermek için:
+    public int ProductsCount { get; set; }
+}
