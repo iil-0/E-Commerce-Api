@@ -1,0 +1,33 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+out/
+
+# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+**/packages/*
+*.nuget.props
+*.nuget.targets
+project.lock.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
