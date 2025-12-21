@@ -5,10 +5,10 @@ namespace ECommerce.Api.Models;
 public class User
 {
     public int Id { get; set; }
-    public string? FullName { get; set; }
+    public string Username { get; set; } = null!;
     public string Email { get; set; } = null!;
     public string Password { get; set; } = null!;
-    public UserRole Role { get; set; } = UserRole.User; // bunu esitlik sagina yazmazsak enum un 0. indexi atanir.0 ise gecersiz
+    public UserRole Role { get; set; } = UserRole.User;
     
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
