@@ -1,11 +1,12 @@
 using ECommerce.Api.Context;
 using ECommerce.Api.DTOs.Users;
+using ECommerce.Api.Interfaces;
 using ECommerce.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Api.Services;
 
-public class UserService
+public class UserService : IUserService
 {
     private readonly AppDbContext _context;
 

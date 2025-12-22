@@ -1,4 +1,5 @@
 using ECommerce.Api.Context;
+using ECommerce.Api.Interfaces;
 using ECommerce.Api.Middlewares;
 using ECommerce.Api.Services;
 using Microsoft.EntityFrameworkCore;
@@ -26,11 +27,11 @@ try
     builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-    // Services
-    builder.Services.AddScoped<CategoryService>();
-    builder.Services.AddScoped<ProductService>();
-    builder.Services.AddScoped<UserService>();
-    builder.Services.AddScoped<OrderService>();
+    // Services (Interface bazlı DI)
+    builder.Services.AddScoped<ICategoryService, CategoryService>();
+    builder.Services.AddScoped<IProductService, ProductService>();
+    builder.Services.AddScoped<IUserService, UserService>();
+    builder.Services.AddScoped<IOrderService, OrderService>();
 
     // Add services to the container
     builder.Services.AddControllers();

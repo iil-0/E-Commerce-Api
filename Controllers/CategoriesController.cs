@@ -1,6 +1,6 @@
 using ECommerce.Api.Common;
 using ECommerce.Api.DTOs.Categories;
-using ECommerce.Api.Services;
+using ECommerce.Api.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Api.Controllers;
@@ -9,9 +9,9 @@ namespace ECommerce.Api.Controllers;
 [Route("api/[controller]")]
 public class CategoriesController : ControllerBase
 {
-    private readonly CategoryService _categoryService;
+    private readonly ICategoryService _categoryService;
 
-    public CategoriesController(CategoryService categoryService)
+    public CategoriesController(ICategoryService categoryService)
     {
         _categoryService = categoryService;
     }

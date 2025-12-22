@@ -1,6 +1,6 @@
 using ECommerce.Api.Common;
 using ECommerce.Api.DTOs.Orders;
-using ECommerce.Api.Services;
+using ECommerce.Api.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Api.Controllers;
@@ -9,9 +9,9 @@ namespace ECommerce.Api.Controllers;
 [Route("api/[controller]")]
 public class OrdersController : ControllerBase
 {
-    private readonly OrderService _orderService;
+    private readonly IOrderService _orderService;
 
-    public OrdersController(OrderService orderService)
+    public OrdersController(IOrderService orderService)
     {
         _orderService = orderService;
     }

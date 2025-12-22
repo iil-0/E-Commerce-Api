@@ -1,11 +1,12 @@
 using ECommerce.Api.Context;
 using ECommerce.Api.DTOs.Categories;
+using ECommerce.Api.Interfaces;
 using ECommerce.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Api.Services;
 
-public class CategoryService
+public class CategoryService : ICategoryService
 {
     private readonly AppDbContext _context;
 

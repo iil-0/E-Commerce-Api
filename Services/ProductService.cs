@@ -1,11 +1,12 @@
 using ECommerce.Api.Context;
 using ECommerce.Api.DTOs.Products;
+using ECommerce.Api.Interfaces;
 using ECommerce.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Api.Services;
 
-public class ProductService
+public class ProductService : IProductService
 {
     private readonly AppDbContext _context;
 

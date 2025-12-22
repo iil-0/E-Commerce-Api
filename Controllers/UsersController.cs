@@ -1,6 +1,6 @@
 using ECommerce.Api.Common;
 using ECommerce.Api.DTOs.Users;
-using ECommerce.Api.Services;
+using ECommerce.Api.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Api.Controllers;
@@ -9,9 +9,9 @@ namespace ECommerce.Api.Controllers;
 [Route("api/[controller]")]
 public class UsersController : ControllerBase
 {
-    private readonly UserService _userService;
+    private readonly IUserService _userService;
 
-    public UsersController(UserService userService)
+    public UsersController(IUserService userService)
     {
         _userService = userService;
     }

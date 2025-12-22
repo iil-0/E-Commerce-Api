@@ -2,12 +2,13 @@ using ECommerce.Api.Context;
 using ECommerce.Api.DTOs.Orders;
 using ECommerce.Api.DTOs.OrderItems;
 using ECommerce.Api.Enums;
+using ECommerce.Api.Interfaces;
 using ECommerce.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Api.Services;
 
-public class OrderService
+public class OrderService : IOrderService
 {
     private readonly AppDbContext _context;
 

@@ -1,6 +1,6 @@
 using ECommerce.Api.Common;
 using ECommerce.Api.DTOs.Products;
-using ECommerce.Api.Services;
+using ECommerce.Api.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Api.Controllers;
@@ -9,9 +9,9 @@ namespace ECommerce.Api.Controllers;
 [Route("api/[controller]")]
 public class ProductsController : ControllerBase
 {
-    private readonly ProductService _productService;
+    private readonly IProductService _productService;
 
-    public ProductsController(ProductService productService)
+    public ProductsController(IProductService productService)
     {
         _productService = productService;
     }
