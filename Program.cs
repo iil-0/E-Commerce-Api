@@ -1,4 +1,5 @@
 using ECommerce.Api.Context;
+using ECommerce.Api.Middlewares;
 using ECommerce.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Global Exception Handler - en üstte olmalı!
+app.UseGlobalExceptionHandler();
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
