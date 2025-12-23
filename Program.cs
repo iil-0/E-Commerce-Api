@@ -1,5 +1,6 @@
 using System.Text;
 using ECommerce.Api.Context;
+using ECommerce.Api.Endpoints;
 using ECommerce.Api.Interfaces;
 using ECommerce.Api.Middlewares;
 using ECommerce.Api.Services;
@@ -96,6 +97,13 @@ try
 
     var app = builder.Build();
 
+    // Seed Data
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        await DbSeeder.SeedAsync(context);
+    }
+
     // Global Exception Handler
     app.UseGlobalExceptionHandler();
 
@@ -116,6 +124,9 @@ try
     app.UseAuthorization();
     
     app.MapControllers();
+
+    // Minimal API Endpoints
+    app.MapMinimalApiEndpoints();
 
     Log.Information("ECommerce API started successfully!");
     app.Run();
