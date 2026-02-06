@@ -251,9 +251,3 @@ docker run -d -p 5185:80 ecommerce-api
 ## Author
 
 Developed by [iil-0](https://github.com/iil-0)
-
----
-
-## License
-
-This project is available under the MIT License.
